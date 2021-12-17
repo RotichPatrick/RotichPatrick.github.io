@@ -1,0 +1,61 @@
+/Create a basic HTML page with head and body tag
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Leaflet Map</title>
+//Load the Leaflet CSS Script
+//External Stylesheets
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+//Load the Leaflet Script that contains Leaflet JavaScript library
+<script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+</head>
+<body>
+//Create the Container
+// Customize the size of your map
+<div id = "map" style = "width: 700px; height: 580px"></div>
+//Our web map and content will go here
+<script>
+// Customize the following pieces of codes to add the various components you wish to 
+//have in your Map
+// Creating map options
+var mapOptions = {
+center: [-1.09626573,37.01288458],
+zoom: 10
+}
+// Creating a map object
+var map = new L.map('map', mapOptions);
+// Creating a Layer object
+var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+// Adding layer to the map
+map.addLayer(layer);
+//......Adding a simple Marker...............
+// Creating the marker object
+var marker = new L.Marker([-1.09626573,37.01288458]);
+// Adding marker to the map
+marker.addTo(map);
+//.....Binding Pop-ups to the Marker......
+//.....To bind a simple popup displaying a message to a marker...
+// Adding pop-up to the marker
+marker.bindPopup('Welcome to Admin block').openPopup();
+// Adding marker to the map
+marker.addTo(map); 
+3 | P a g e
+// Creating a Marker with options
+var markerOptions = {
+ title: "MyLocation",
+ clickable: true,
+ draggable: true
+}
+// Creating a marker
+var marker = L.marker([-1.09626573,37.01288458], markerOptions);
+// Adding marker to the map
+marker.addTo(map);
+//Marker Custom Icons
+// Icon options
+var iconOptions = {
+ iconUrl: 'logo.png',
+ iconSize: [50, 50]
+}
+</body>
+</html>
