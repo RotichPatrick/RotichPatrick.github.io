@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+	<title>WEBMAP IN LEAFLET</title>
+	
+</head>
+
+<body>
+	<div id="map" style= "height:800px"></div>
+	<script>
+		var map= L.map('map').setView([0.6000004955175, 34.55998016262965],17);
+		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',{
+		attribution:'&copy;<a href="http://osm.org/copyright">OpenStreetMap</a>contributors'
+		}).addTo(map);
+        let pnt = L.marker([0.5741139534955175, 34.55998016262965]).addTo(map);
+
+        let legend = L.control({position: "topleft"});
+legend.onAdd = function() {
+    let div = L.DomUtil.create("div", "legend");
+    div.innerHTML = 
+        '<p><b>Bungoma Referal Hospital</b></p><hr>' +
+        '<p>The Blue Marker shows the location of the Bungoma Referal Hospital' + 
+        'on a Leaflet map</p>' +
+        'The following are some of the services offered:<br>' +
+        '<p><ul>' +
+        '<li>Outpatient Services</li>' +
+        '<li>Maternity</li>' +
+        '<li>X Ray Services</li>' +
+        '</ul></p>' +
+        '<img src="images/leaflet.png">';
+    return div;
+};
+legend.addTo(map);
+	</script>
+	<body>
+</body>	
+
+</html>

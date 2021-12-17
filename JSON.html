@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        body {
+          background-color: goldenrod;
+        }
+        
+        h1 {
+          color: springgreen;
+          text-align: left;
+        }
+        
+        
+        </style>
+        
+        </head>
+<body>
+
+<h1>filters for JSON data </h1>
+
+<p id="application"></p>
+
+<script>
+const txt = '{"IDENTITY":"Rodgers", "RESIDENCE":"Nairobi", "occupation":"Student"}'
+const obj = JSON.parse(txt);
+document.getElementById("application").innerHTML = obj.name + ", " + obj.age + "," + obj.occupation;
+</script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+	<title>leaflet web map</title>
+	
+</head>
+
+<body>
+	<div id="map" style= "height:800px"></div>
+	<script>
+		var map= L.map('map').setView([0.5741139534955175, 34.55998016262965],17);
+		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',{
+		attribution:'&copy;<a href="http://osm.org/copyright">OpenStreetMap</a>contributors'
+		}).addTo(map);
+        var center = [0.6893139534955175, 34.70009016262965];
+        var radius = 10;
+        var options = {steps: 10, units: 'kilometers'};
+        var circle = turf.circle(center, radius, options);
+	</script>
+	<body>
+</body>	
+
+</html>
